@@ -1,0 +1,8 @@
+[window]
+decorations = "none"
+opacity = 0.0 # Transparente
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 12.0
+

@@ -1,0 +1,110 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: rgba(19, 28, 22, 0.6);
+}
+
+/* ==========================================
+   ESPACIOS DE TRABAJO (Workspaces)
+   ========================================== */
+#workspaces {
+    background-color: rgba(70, 145, 108, 0.3);
+    border-radius: 0px;
+    margin: 4px 5px;
+    border: 1px solid rgba(149, 213, 178, 0.2);
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: #a7dbb6;
+    padding: 0 8px;
+    margin: 4px 2px;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background-color: rgba(64, 145, 108, 0.5);
+}
+
+#workspaces button.active {
+    background-color: #a7dbb6;
+    color: #131c16;
+    border-radius: 0px;
+}
+
+/* ==========================================
+   TÍTULO DE LA VENTANA
+   ========================================== */
+#window {
+    color: #a7dbb6;
+    padding: 0 12px;
+    margin: 4px 5px;
+}
+
+/* ==========================================
+   MÓDULOS INDIVIDUALES
+   ========================================== */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#volume,
+#pulseaudio,
+#network,
+#tray,
+#custom-notification {
+    padding: 0 12px;
+    color: #a7dbb6;
+    background-color: rgba(64, 145, 108, 0.3);
+    border-radius: 0px;
+    margin: 4px 5px;
+    border: 1px solid rgba(149, 213, 178, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover interactivo, incluido notificaciones */
+#clock:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#custom-notification:hover {
+    background-color: rgba(64, 145, 108, 0.5);
+}
+
+/* Ajuste específico para que la campana no baile al silenciar */
+#custom-notification {
+    font-size: 17px;
+}
+
+/* ==========================================
+   ANIMACIONES Y ESTADOS
+   ========================================== */
+#battery.critical:not(.charging) {
+    background-color: #7fa986;
+    color: #131c16;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #131c16;
+        color: #7fa986;
+    }
+}
+
+#network.disconnected,
+#pulseaudio.muted {
+    color: #7fa986;
+}
+

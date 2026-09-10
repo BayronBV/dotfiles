@@ -1,0 +1,37 @@
+window {
+    margin: 0px;
+    border: 2px solid #2d6a4f; /* Borde/Detalle */
+    background-color: rgba(19, 28, 22, 0.92); /* Fondo Principal con toque Crystal/Transparente */
+    font-family: sans-serif;
+}
+
+#input {
+    margin: 10px;
+    border: 1px solid #2d6a4f; /* Borde/Detalle */
+    color: #a7dbb6; /* Texto Principal */
+    background-color: #131c16; /* Fondo Principal sólido */
+    padding: 10px;
+}
+
+#scroll {
+    margin: 5px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    color: #a7dbb6; /* Texto Principal */
+}
+
+#entry {
+    padding: 5px;
+}
+
+#entry:selected {
+    background-color: #74c69d; /* Verde Menta Brillante para el Resaltado */
+}
+
+#text:selected {
+    color: #131c16; /* Color oscuro del fondo para que contraste y se lea bien */
+    font-weight: bold;
+}

@@ -1,0 +1,102 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 44,
+    "spacing": 5,
+    "exclusive": true,
+    "passthrough": false,
+
+
+    // Orden de los módulos
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock",
+ "custom/notification",
+
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio"
+    ],
+
+    // ==========================================
+    // CONFIGURACIÓN DE MÓDULOS
+    // ==========================================
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{name}"
+    },
+
+    "hyprland/window": {
+        "format": " {}",
+        "max-length": 50,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - Visual Studio Code": "💻 $1",
+            "(.*) - Discord": "💬 $1"
+        }
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    // CALENDARIO NATIVO
+    "clock": {
+        "format": "  {:%H:%M  |    %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip": true
+    },
+
+    // RED
+    "network": {
+        "format-wifi": "󰖩  {essid}",
+        "format-ethernet": "󰈀  Conectado",
+        "format-linked": "󰈀  {ifname} (No IP)",
+        "format-disconnected": "󰖪  Desconectado",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip": false,
+        "on-click-right": "nm-connection-editor"
+    },
+
+    // VOLUMEN
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  Muteado",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip": false,
+        "on-click-right": "pavucontrol"
+    },
+"custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂚<span foreground='red'><sup>●</sup></span>",
+            "none": "󰂚<span foreground='#00000000'><sup>●</sup></span>",
+            "dnd-notification": "󰂛<span foreground='red'><sup>●</sup></span>",
+            "dnd-none": "󰂛<span foreground='#00000000'><sup>●</sup></span>"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }
+}

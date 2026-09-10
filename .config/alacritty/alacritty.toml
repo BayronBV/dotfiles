@@ -1,0 +1,30 @@
+[window]
+opacity = 0.78 # Aumentamos la transparencia en sintonía con Hyprland
+padding = { x = 15, y = 15 }
+
+[font]
+size = 11.5
+
+[colors.primary]
+background = "#131c16" # Un fondo verde bosque extremadamente oscuro, casi negro
+foreground = "#a7dbb6" # Texto principal en verde menta pastel (súper relajante para leer código)
+
+[colors.normal]
+black   = "#1b241e"
+red     = "#7fa986" # Un verde oliva rojizo suave
+green   = "#52b788" # Verde esmeralda claro
+yellow  = "#74c69d" # Verde menta amarillento
+blue    = "#40916c" # Verde azulado bosque
+magenta = "#2d6a4f" # Verde pino oscuro
+cyan    = "#95d5b2" # Verde pastel claro
+white   = "#b7e4c7"
+
+[colors.bright]
+black   = "#2d3a30"
+red     = "#95d5b2"
+green   = "#74c69d"
+yellow  = "#b7e4c7"
+blue    = "#52b788"
+magenta = "#40916c"
+cyan    = "#d8f3dc" # El verde más brillante, casi blanco menta
+white   = "#e9f5ec"

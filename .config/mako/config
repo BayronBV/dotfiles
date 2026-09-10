@@ -1,0 +1,21 @@
+# --- POSICIÓN Y TIEMPO ---
+anchor=top-right
+default-timeout=5000
+
+# --- ESTILO BASADO EN TU PALETA ---
+# rgba(64, 145, 108, 0.3) -> 40916C con 30% de opacidad (4D)
+background-color=#40916c4D
+
+# rgba(149, 213, 178, 0.2) -> 95D5B2 con 20% de opacidad (33)
+border-color=#95d5b233
+border-size=1
+border-radius=8
+margin=4,5
+
+# El color oscuro de tus animaciones para que el texto resalt
+text-color=#40916c
+font=JetBrains Mono Nerd Font 10
+
+# --- SONIDO PERSONALIZADO ---
+# Se ejecutará cada vez que llegue una notificación
+on-notify=exec paplay /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
