@@ -50,9 +50,12 @@ window#waybar {
 /* ========================================== 
    MÓDULOS INDIVIDUALES 
    ========================================== */ 
-/* Aquí agregamos #custom-notification a tu estilo principal */ 
+/* ========================================== 
+   MÓDULOS INDIVIDUALES 
+   ========================================== */ 
 #clock, 
-#battery, 
+#battery,
+#custom-power,
 #cpu, 
 #memory, 
 #disk, 
@@ -74,11 +77,11 @@ window#waybar {
 #clock:hover, 
 #network:hover, 
 #pulseaudio:hover, 
-#battery:hover, 
+#battery:hover,
+#custom-power:hover,
 #custom-notification:hover { 
     background-color: rgba(64, 145, 108, 0.5); 
-} 
-
+}
 /* Ajuste específico para que la campana no baile al silenciar */ 
 #custom-notification { 
     font-size: 17px; 
@@ -108,4 +111,3 @@ window#waybar {
 #pulseaudio.muted { 
     color: #7fa986; 
 }
-

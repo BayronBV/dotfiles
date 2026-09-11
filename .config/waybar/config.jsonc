@@ -6,7 +6,6 @@
     "exclusive": true,
     "passthrough": false,
 
-
     // Orden de los módulos
     "modules-left": [
         "hyprland/workspaces",
@@ -14,13 +13,14 @@
     ],
     "modules-center": [
         "clock",
- "custom/notification",
-
+        "custom/notification"
     ],
     "modules-right": [
         "tray",
         "network",
-        "pulseaudio"
+        "pulseaudio",
+	 "battery",
+        "custom/power",
     ],
 
     // ==========================================
@@ -83,7 +83,8 @@
         "tooltip": false,
         "on-click-right": "pavucontrol"
     },
-"custom/notification": {
+
+    "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
@@ -98,5 +99,27 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+
+    // ==========================================
+    // CONFIGURACIÓN DE BATERÍA Y ENERGÍA
+    // ==========================================
+    "custom/power": {
+        "format": "{}",
+        "exec": "sh -c 'p=$(powerprofilesctl get); if [ \"$p\" = \"performance\" ]; then echo \"  Rendimiento\"; elif [ \"$p\" = \"balanced\" ]; then echo \"  Balanceado\"; else echo \"  Ahorro\"; fi'",
+        "interval": 2,
+        "on-click": "sh -c 'p=$(powerprofilesctl get); if [ \"$p\" = \"performance\" ]; then powerprofilesctl set balanced; elif [ \"$p\" = \"balanced\" ]; then powerprofilesctl set power-saver; else powerprofilesctl set performance; fi'",
+        "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
     }
 }
